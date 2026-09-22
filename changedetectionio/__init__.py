@@ -7,15 +7,19 @@ __version__ = '0.60.4'
 from changedetectionio.strtobool import strtobool
 from json.decoder import JSONDecodeError
 
-from loguru import logger
-import getopt
-import logging
+try:
+    from loguru import logger
+except ImportError:
+    import logging
+    logger = logging.getLogger(__name__)
+
 import os
 import platform
 import signal
 import threading
 import time
-
+import getopt
+import logging
 # Eventlet completely removed - using threading mode for SocketIO
 # This provides better Python 3.12+ compatibility and eliminates eventlet/asyncio conflicts
 # Note: store and changedetection_app are imported inside main() to avoid

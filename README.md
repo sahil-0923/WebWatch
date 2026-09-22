@@ -47,7 +47,7 @@ Monitor price changes, stock availability, content edits, PDF changes, and JSON 
 
 4. **Start the WebWatch server:**
    ```bash
-   python changedetection.py -d ./datastore -p 5000 -C
+   python changedetection.py -d ./datastore -p 5000
    ```
 
 5. **Open in your browser:**
